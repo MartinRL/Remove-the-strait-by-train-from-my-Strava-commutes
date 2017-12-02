@@ -4,9 +4,15 @@
 	<LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <PackageReference Include="Xbehave.Core" Version="2.3.0-rc0001-build717" />
     <PackageReference Include="xunit" Version="2.3.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.5.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
   </ItemGroup>
 </Project>
+=======
+    <Folder Include="GPX-files" />
+  </ItemGroup>
+</Project>
+>>>>>>> 8bec616... add test data

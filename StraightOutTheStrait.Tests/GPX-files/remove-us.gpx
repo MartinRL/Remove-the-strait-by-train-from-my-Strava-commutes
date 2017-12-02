@@ -1,0 +1,18 @@
+﻿<trkpt lat="55.6077510" lon="12.7576020">
+  <ele>-1.6</ele>
+  <time>2017-10-24T13:34:48Z</time>
+  <extensions>
+    <gpxtpx:TrackPointExtension>
+      <gpxtpx:atemp>9</gpxtpx:atemp>
+    </gpxtpx:TrackPointExtension>
+  </extensions>
+</trkpt>
+<trkpt lat="55.5852920" lon="12.8678810">
+  <ele>15.2</ele>
+  <time>2017-10-24T13:57:01Z</time>
+  <extensions>
+    <gpxtpx:TrackPointExtension>
+      <gpxtpx:atemp>15</gpxtpx:atemp>
+    </gpxtpx:TrackPointExtension>
+  </extensions>
+</trkpt>
