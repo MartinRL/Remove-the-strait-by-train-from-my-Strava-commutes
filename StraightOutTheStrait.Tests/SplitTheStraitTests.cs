@@ -44,34 +44,34 @@ namespace StraightOutTheStrait.Tests
                     .Descendants()
                     .Where(_ =>
                     {
-                        bool hasLon;
+                        bool swedishBorderLon;
                         try
                         {
-                            hasLon = decimal.Parse(_.Attribute("lon").Value) < 12.9m;
+                            swedishBorderLon = decimal.Parse(_.Attribute("lon").Value) < 12.9m;
                         }
                         catch
                         {
-                            hasLon = false;
+                            swedishBorderLon = false;
                         }
 
-                        return hasLon;
+                        return swedishBorderLon;
                     }).Remove();
                 
                 danishRide
                     .Descendants()
                     .Where(_ =>
                     {
-                        bool hasLon;
+                        bool danishBorderLon;
                         try
                         {
-                            hasLon = decimal.Parse(_.Attribute("lon").Value) > 12.7m;
+                            danishBorderLon = decimal.Parse(_.Attribute("lon").Value) > 12.7m;
                         }
                         catch
                         {
-                            hasLon = false;
+                            danishBorderLon = false;
                         }
 
-                        return hasLon;
+                        return danishBorderLon;
                     }).Remove();
                 
                 danishRide.Descendants().First(_ => _.Name.LocalName == "time").Value =
