@@ -30,7 +30,7 @@ namespace StraightOutTheStrait.Tests
                 .x(() => Assert.Equal(XDocument.Load(@"GPX-files\Sweden-lon12.9.gpx").ToString(), swedishRide.ToString()));
             
             "Then the Danish ride is the Danish legs"
-                .x(() => Assert.Equal(XDocument.Load(@"GPX-files\Denmark-lon12.6.gpx"), danishRide));
+                .x(() => Assert.Equal(XDocument.Load(@"GPX-files\Denmark-lon12.6.gpx").ToString(), danishRide.ToString()));
         }
 
         public class StraitSplitter
@@ -74,13 +74,11 @@ namespace StraightOutTheStrait.Tests
                         return hasLon;
                     }).Remove();
                 
-                //Console.WriteLine(trkptNodes.Count());
+                danishRide.Descendants().First(_ => _.Name.LocalName == "time").Value =
+                    danishRide.Descendants().Where(_ => _.Name.LocalName == "time").ElementAt(1).Value;
                 
                 swedishRide.Save("swedish_leg.gpx");
                 danishRide.Save("danish_leg.gpx");
-
-                //throw new NotImplementedException($"original count: {faultyCommuteWithIncludedStrait.Descendants().Count()}, swedish count: {swedishRide.Descendants().Count()}, danish count: {danishRide.Descendants().Count()}");
-                //    faultyCommuteWithIncludedStrait.Descendants().Count(_ => _.Name.LocalName == "trkpt").ToString());
                 
                 return (swedishRide, danishRide);
             }
