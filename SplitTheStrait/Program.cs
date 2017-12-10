@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 
@@ -8,13 +9,17 @@ namespace SplitTheStrait
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            foreach (var file in Directory.EnumerateFiles(@"C:\strava", "*.gpx"))
+            {
+                Console.WriteLine($"Splitting: {file}");
+                StraitSplitter.Split(XDocument.Load(file));
+            }
         }
     }
     
-    public class StraitSplitter
+    public static class StraitSplitter
     {
-        public void Split(XDocument faultyCommuteWithIncludedStrait)
+        public static void Split(XDocument faultyCommuteWithIncludedStrait)
         {
             var swedishRide = new XDocument(faultyCommuteWithIncludedStrait);
             var danishRide = new XDocument(faultyCommuteWithIncludedStrait);
@@ -55,9 +60,13 @@ namespace SplitTheStrait
                 
             danishRide.Descendants().First(_ => _.Name.LocalName == "time").Value =
                 danishRide.Descendants().Where(_ => _.Name.LocalName == "time").ElementAt(1).Value;
-                
-            swedishRide.Save("swedish_leg.gpx");
-            danishRide.Save("danish_leg.gpx");
+
+            var date = DateTime
+                .Parse(faultyCommuteWithIncludedStrait.Descendants().First(_ => _.Name.LocalName == "time").Value).Date
+                .ToString("yy-MM-dd");
+            
+            swedishRide.Save(@"C:\strava\output\swedish_leg-"+date+".gpx");
+            danishRide.Save(@"C:\strava\output\danish_leg-"+date+".gpx");
         }
     }
 }
