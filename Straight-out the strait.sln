@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StraightOutTheStrait.Tests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StraitOutTheStrait", "StraitOutTheStrait\StraitOutTheStrait.csproj", "{D2A877BC-C013-4C05-AAD9-EA26B6C76046}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SplitTheStrait", "SplitTheStrait\SplitTheStrait.csproj", "{BA287802-FF7C-476E-9BC5-5A57A47E95CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{D2A877BC-C013-4C05-AAD9-EA26B6C76046}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2A877BC-C013-4C05-AAD9-EA26B6C76046}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2A877BC-C013-4C05-AAD9-EA26B6C76046}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA287802-FF7C-476E-9BC5-5A57A47E95CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA287802-FF7C-476E-9BC5-5A57A47E95CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA287802-FF7C-476E-9BC5-5A57A47E95CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA287802-FF7C-476E-9BC5-5A57A47E95CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
